@@ -1,0 +1,67 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+/* .searchContainer {
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 16px;
+  align-items: center;
+} */
+.formContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+/* input[type="time"],
+input[type="date"],
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc !important;
+} */
+.css-5lvf42-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-5lvf42-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-5lvf42-MuiSelect-select-MuiInputBase-input-MuiInput-input {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc !important;
+}
+.bgText {
+  background-color: rgb(25, 131, 131);
+  color: white !important;
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.flexLabel {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  background-color: #e4e4e4;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: #ccc;
+}
+.modalLabel {
+  font-size: 500;
+  font-weight: 600;
+}
+.subModalLabel {
+  font-weight: 500;
+  background: #aaaaaa;
+}
+i,
+svg {
+  cursor: pointer;
+}
