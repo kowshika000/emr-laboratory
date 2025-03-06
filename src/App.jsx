@@ -17,7 +17,7 @@ import DisplayConsumption from "./Lab/Consumption/DisplayConsumption";
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <HeaderTabs />
         <Routes>
           <Route path="/" element={<Navigate to="/labOrder" />} />
@@ -35,7 +35,8 @@ function App() {
           <Route path="/TAT" element={<DisplayTAT />} />
           <Route path="/consumption" element={<DisplayConsumption />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <HeaderTabs/>
     </div>
   );
 }

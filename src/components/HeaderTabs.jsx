@@ -11,13 +11,11 @@ import DisplayRejectSamples from "../Lab/RejectSamples/DisplayRejectSamples";
 import DisplayTAT from "../Lab/TAT/DisplayTAT";
 import DisplayConsumption from "../Lab/Consumption/DisplayConsumption";
 
-const { TabPane } = Tabs;
-
 const HeaderTabs = () => {
-  const [activeTab, setActiveTab] = useState("0");
+  const [activeTab, setActiveTab] = useState("0"); // Ensure it's a string
 
   const handleTabChange = (key) => {
-    setActiveTab(key);
+    setActiveTab(String(key)); // Ensure it stays a string
   };
 
   const tabComponents = {
@@ -34,24 +32,30 @@ const HeaderTabs = () => {
   };
 
   return (
-    <div
-      className="p-3"
-      style={{ width: "100%", height: "100%", overflow: "auto" }}
-    >
+    <div className="p-3" style={{ width: "100%", height: "100%", overflow: "auto" }}>
       <Tabs activeKey={activeTab} onChange={handleTabChange} type="card">
-        <TabPane tab="Lab Order Dashboard" key="0" />
-        <TabPane tab="Sample Collection" key="1" />
-        <TabPane tab="Submitted Samples" key="2" />
-        <TabPane tab="Accession" key="3" />
-        <TabPane tab="Test Result" key="4" />
-        <TabPane tab="Authenticate/Approval" key="5" />
-        <TabPane tab="Print Report" key="6" />
-        <TabPane tab="Rejected Samples" key="7" />
-        <TabPane tab="TAT" key="8" />
-        <TabPane tab="Consumption" key="9" />
+        <Tabs.TabPane tab="Lab Order Dashboard" key="0" />
+        <Tabs.TabPane tab="Sample Collection" key="1" />
+        <Tabs.TabPane tab="Submitted Samples" key="2" />
+        <Tabs.TabPane tab="Accession" key="3" />
+        <Tabs.TabPane tab="Test Result" key="4" />
+        <Tabs.TabPane tab="Authenticate/Approval" key="5" />
+        <Tabs.TabPane tab="Print Report" key="6" />
+        <Tabs.TabPane tab="Rejected Samples" key="7" />
+        <Tabs.TabPane tab="TAT" key="8" />
+        <Tabs.TabPane tab="Consumption" key="9" />
       </Tabs>
 
-      <div>{tabComponents[activeTab]}</div>
+      <div>
+        {(() => {
+          try {
+            return tabComponents[Number(activeTab)] || <p>Loading...</p>;
+          } catch (error) {
+            console.error("Error rendering tab:", error);
+            return <p>Something went wrong</p>;
+          }
+        })()}
+      </div>
     </div>
   );
 };
